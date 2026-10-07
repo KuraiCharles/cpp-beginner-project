@@ -76,5 +76,8 @@ void addProduct(int MAX, int ADD_PRODUCT_QUANTITY, std::string ADD_PRODUCT){
     
     std::cout << "Quantity: ";
     std::cin >> ADD_PRODUCT_QUANTITY;
+
     }
 }
+
+void displayAll(){}
