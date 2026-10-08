@@ -3,8 +3,8 @@
 
 int destinationMenu(int INPUT_A);
 int timeMenu(int INPUT_B);
-double americanInput(int INPUT_DUR, double DAY_VALUE, double NIGHT_VALUE, int c);
-double asianInput(int INPUT_DUR, double DAY_VALUE, double NIGHT_VALUE, int c);
+double inputTotal(int INPUT_DUR, double DAY_VALUE, double NIGHT_VALUE, int c);
+
 
 int main(){
     int DESTINATION_INPUT,
@@ -29,10 +29,10 @@ int main(){
     switch (DESTINATION_INPUT)
     {
     case 1:
-        TOTAL_COST = americanInput(DURATION, AMERICAN_DAYTIME, AMERICAN_NIGHTTIME, TIME_INPUT);
+        TOTAL_COST = inputTotal(DURATION, AMERICAN_DAYTIME, AMERICAN_NIGHTTIME, TIME_INPUT);
     break;
     case 2:
-        TOTAL_COST = asianInput(DURATION, ASIAN_DAYTIME, ASIAN_NIGHTTIME, TIME_INPUT);
+        TOTAL_COST = inputTotal(DURATION, ASIAN_DAYTIME, ASIAN_NIGHTTIME, TIME_INPUT);
     break;
     case 3:
         return 0;
@@ -69,23 +69,7 @@ int timeMenu(int INPUT_B){
     return INPUT_B;
 }
 
-double americanInput(int INPUT_DUR, double DAY_VALUE, double NIGHT_VALUE, int TIME){
-    if(TIME == 1){
-        return INPUT_DUR * DAY_VALUE;
-    }
-    else if(TIME == 2){
-        return INPUT_DUR * NIGHT_VALUE;
-    }
-    else if(TIME == 3){
-        return 0;
-    }
-    else{
-        std::cout << "Invalid Output";
-        exit(0);
-    }
-}
-
-double asianInput(int INPUT_DUR, double DAY_VALUE, double NIGHT_VALUE, int TIME){
+double inputTotal(int INPUT_DUR, double DAY_VALUE, double NIGHT_VALUE, int TIME){
     if(TIME == 1){
         return INPUT_DUR * DAY_VALUE;
     }
